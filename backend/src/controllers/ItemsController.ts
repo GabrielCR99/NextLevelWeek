@@ -8,7 +8,7 @@ class ItemsController {
       return {
         id: item.id,
         title: item.title,
-        imageUrl: `http://localhost:3333/uploads/${item.image}`,
+        image_url: `http://localhost:3333/uploads/${item.image}`,
       };
     });
     return response.json(serializedItems);
