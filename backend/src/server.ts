@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import path from "path";
 import routes from "./routes";
+import { errors } from "celebrate";
 
 const app = express();
 
@@ -12,6 +13,8 @@ app.use(express.json());
 app.use(routes);
 
 app.use("/uploads", express.static(path.resolve(__dirname, "..", "uploads")));
+
+app.use(errors());
 
 // * Rota -> é o endereço completo da requisição. É muito semântica
 // * Recurso -> qual a entidade da sessão; do sistema
